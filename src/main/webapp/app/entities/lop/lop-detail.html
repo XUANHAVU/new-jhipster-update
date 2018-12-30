@@ -1,0 +1,27 @@
+
+<div>
+    <h2><span>Thông Tin Khóa</span></h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>ID</span></dt>
+        <dd>
+            <span>{{vm.lop.id}}</span>
+        </dd>
+        <dt><span>Tên Khóa</span></dt>
+        <dd>
+            <span>{{vm.lop.name_class}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Trở về</span>
+    </button>
+
+    <button type="button" ui-sref="lop-detail.edit({id:vm.lop.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Sửa</span>
+    </button>
+</div>

@@ -1,0 +1,123 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myPersonLabel">Thêm mới hoặc Sửa giáo viên</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.person.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.person.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_name">Tên Giáo Viên</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.person.name"
+                    required ng-maxlength="45"/>
+            <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.name.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.name.$error.maxlength">
+                    This field cannot be longer than 45 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_status">Giới Tính</label>
+            <input type="text" class="form-control" name="status" id="field_status"
+                    ng-model="vm.person.status"
+                    required ng-maxlength="45"/>
+            <div ng-show="editForm.status.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.status.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.status.$error.maxlength">
+                    This field cannot be longer than 45 characters.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                   ng-model="vm.person.email"
+                   required ng-maxlength="45"/>
+            <div ng-show="editForm.email.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.email.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                   ng-show="editForm.email.$error.maxlength">
+                    This field cannot be longer than 45 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_address">Địa Chỉ</label>
+            <input type="text" class="form-control" name="address" id="field_address"
+                   ng-model="vm.person.address"
+                   required ng-maxlength="45"/>
+            <div ng-show="editForm.address.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.address.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                   ng-show="editForm.address.$error.maxlength">
+                    This field cannot be longer than 45 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_year">Năm Sinh</label>
+            <input type="text" class="form-control" name="year" id="field_year"
+                   ng-model="vm.person.year"
+                   required ng-maxlength="45"/>
+            <div ng-show="editForm.year.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.year.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                   ng-show="editForm.year.$error.maxlength">
+                    This field cannot be longer than 45 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_phone">SĐT</label>
+            <input type="text" class="form-control" name="phone" id="field_phone"
+                   ng-model="vm.person.phone"
+                   required ng-maxlength="45"/>
+            <div ng-show="editForm.phone.$invalid">
+                <p class="help-block"
+                   ng-show="editForm.phone.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                   ng-show="editForm.phone.$error.maxlength">
+                    This field cannot be longer than 45 characters.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Hủy bỏ</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Lưu</span>
+        </button>
+    </div>
+</form>

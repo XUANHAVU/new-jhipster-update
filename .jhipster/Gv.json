@@ -1,0 +1,11 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [],
+    "changelogDate": "20181203080311",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "gv",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}

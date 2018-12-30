@@ -1,0 +1,86 @@
+<div>
+    <h2>Quản Lý Thông Tin Giáo Viên</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 pull-left">
+                <button class="btn btn-primary" ui-sref="person.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Thêm mới giáo viên
+                    </span>
+                </button>
+            </div>
+        </div>
+        <br>
+        <div class="row container-fluid">
+            <div class="col-md-6">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <form class="card card-sm">
+                            <div class="card-body row no-gutters align-items-center">
+                                <div class="col-auto">
+                                    <i class="fas fa-search h4 text-body"></i>
+                                </div>
+                                <!--end of col-->
+                                <div class="col">
+                                    <input class="form-control form-control-lg form-control-borderless" type="search" class="search_3" ng-model="vm.searchText" ng-change="vm.change()" placeholder="Tìm kiếm giáo viên"/>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>#</span></th>
+                    <th><span>Tên Giáo viên</span></th>
+                    <th><span>Giới tính</span></th>
+                    <th><span>Email</span></th>
+                    <th><span>Địa chỉ</span></th>
+                    <th><span>Năm sinh</span></th>
+                    <th><span>SĐT</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="person in vm.people track by person.id">
+                    <td><a ui-sref="person-detail({id:person.id})">{{person.id}}</a></td>
+                    <td>{{person.name}}</td>
+                    <td>{{person.status}}</td>
+                    <td>{{person.email}}</td>
+                    <td>{{person.address}}</td>
+                    <td>{{person.year}}</td>
+                    <td>{{person.phone}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="person-detail({id:person.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="person.edit({id:person.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="person.delete({id:person.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

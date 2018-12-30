@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span>Thông Tin Sinh Viên</span></h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Mã Sinh Viên</span></dt>
+        <dd>
+            <span>{{vm.student.ageStudent}}</span>
+        </dd>
+        <dt><span>Tên Sinh Viên</span></dt>
+        <dd>
+            <span>{{vm.student.nameStudent}}</span>
+        </dd>
+        <dt><span>Địa Chỉ</span></dt>
+        <dd>
+            <span>{{vm.student.address}}</span>
+        </dd>
+        <dt><span>SĐT</span></dt>
+        <dd>
+            <span>{{vm.student.phone}}</span>
+        </dd>
+        <dt><span>Email</span></dt>
+        <dd>
+            <span>{{vm.student.email}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Trở về</span>
+    </button>
+
+    <button type="button" ui-sref="student-detail.edit({id:vm.student.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Sửa</span>
+    </button>
+</div>

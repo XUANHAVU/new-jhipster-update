@@ -1,0 +1,26 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "student",
+            "otherEntityName": "student",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "lop"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name_class",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "changelogDate": "20181206083819",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "lop",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}
