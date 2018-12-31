@@ -25,7 +25,11 @@ public class Lop implements Serializable {
 
     @NotNull
     @Column(name = "name_class", nullable = false)
-    private Integer name_class;
+    private String name_class;
+
+    @NotNull
+    @Column(name = "soluong", nullable = false)
+    private String soluong;
 
     @OneToMany(mappedBy = "lop")
     @JsonIgnore
@@ -40,17 +44,30 @@ public class Lop implements Serializable {
         this.id = id;
     }
 
-    public Integer getName_class() {
+    public String getName_class() {
         return name_class;
     }
 
-    public Lop name_class(Integer name_class) {
+    public Lop name_class(String name_class) {
         this.name_class = name_class;
         return this;
     }
 
-    public void setName_class(Integer name_class) {
+    public void setName_class(String name_class) {
         this.name_class = name_class;
+    }
+
+    public String getSoluong() {
+        return soluong;
+    }
+
+    public Lop soluong(String soluong){
+        this.soluong = soluong;
+        return this;
+    }
+
+    public void setSoluong(String soluong) {
+        this.soluong = soluong;
     }
 
     public Set<Student> getStudents() {
@@ -102,8 +119,10 @@ public class Lop implements Serializable {
     @Override
     public String toString() {
         return "Lop{" +
-            "id=" + getId() +
-            ", name_class=" + getName_class() +
-            "}";
+            "id=" + id +
+            ", name_class='" + name_class + '\'' +
+            ", soluong='" + soluong + '\'' +
+            ", students=" + students +
+            '}';
     }
 }

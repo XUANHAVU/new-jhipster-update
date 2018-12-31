@@ -41,8 +41,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest(classes = XuanhaApp.class)
 public class LopResourceIntTest {
 
-    private static final Integer DEFAULT_NAME_CLASS = 1;
-    private static final Integer UPDATED_NAME_CLASS = 2;
+    private static final String DEFAULT_NAME_CLASS = "1";
+    private static final String UPDATED_NAME_CLASS = "2";
 
     @Autowired
     private LopRepository lopRepository;

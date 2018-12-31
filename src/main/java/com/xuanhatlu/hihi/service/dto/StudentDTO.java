@@ -34,7 +34,7 @@ public class StudentDTO implements Serializable {
 
     private Long lopId;
 
-    private Integer lopName;
+    private String lopName;
 
     public Long getLopId() {
         return lopId;
@@ -44,11 +44,11 @@ public class StudentDTO implements Serializable {
         this.lopId = lopId;
     }
 
-    public Integer getLopName() {
+    public String getLopName() {
         return lopName;
     }
 
-    public void setLopName(Integer lopName) {
+    public void setLopName(String lopName) {
         this.lopName = lopName;
     }
 

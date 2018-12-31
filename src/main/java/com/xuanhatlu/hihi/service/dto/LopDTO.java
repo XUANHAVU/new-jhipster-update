@@ -15,7 +15,10 @@ public class LopDTO implements Serializable {
     private Long id;
 
     @NotNull
-    private Integer name_class;
+    private String name_class;
+
+    @NotNull
+    private String soluong;
 
     public Long getId() {
         return id;
@@ -25,12 +28,20 @@ public class LopDTO implements Serializable {
         this.id = id;
     }
 
-    public Integer getName_class() {
+    public String getName_class() {
         return name_class;
     }
 
-    public void setName_class(Integer name_class) {
+    public void setName_class(String name_class) {
         this.name_class = name_class;
+    }
+
+    public String getSoluong() {
+        return soluong;
+    }
+
+    public void setSoluong(String soluong) {
+        this.soluong = soluong;
     }
 
     @Override
@@ -57,8 +68,9 @@ public class LopDTO implements Serializable {
     @Override
     public String toString() {
         return "LopDTO{" +
-            "id=" + getId() +
-            ", name_class=" + getName_class() +
-            "}";
+            "id=" + id +
+            ", name_class='" + name_class + '\'' +
+            ", soluong='" + soluong + '\'' +
+            '}';
     }
 }

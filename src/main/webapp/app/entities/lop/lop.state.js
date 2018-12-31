@@ -95,6 +95,7 @@
                     resolve: {
                         entity: function () {
                             return {
+                                soluong: null,
                                 name_class: null,
                                 id: null
                             };
